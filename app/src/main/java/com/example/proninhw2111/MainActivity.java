@@ -38,7 +38,15 @@ public class MainActivity extends AppCompatActivity {
         mBtnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Выбор подтвержден!", Toast.LENGTH_LONG).show();
+                if (mCashAddressChkBx.isChecked()) {
+                    Toast.makeText(MainActivity.this, "Выбран наличный рассчет", Toast.LENGTH_LONG).show();
+                }
+                if (mMobilePhoneChkBx.isChecked()) {
+                    Toast.makeText(MainActivity.this, "Выбрана оплата телефоном", Toast.LENGTH_LONG).show();
+                }
+                if (mBankCardChkBx.isChecked()) {
+                    Toast.makeText(MainActivity.this, "Выбрана оплата картой", Toast.LENGTH_LONG).show();
+                }
             }
         });
         mBankCardChkBx = findViewById(R.id.bankCardChkBx);
