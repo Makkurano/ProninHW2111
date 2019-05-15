@@ -34,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         mInputMoney = findViewById(R.id.inputMoney);
         mInputInfo = findViewById(R.id.inputInfo);
+        mBtnOk = findViewById(R.id.btnOK);
+        mBtnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Выбор подтвержден!", Toast.LENGTH_LONG).show();
+            }
+        });
         mBankCardChkBx = findViewById(R.id.bankCardChkBx);
         mMobilePhoneChkBx = findViewById(R.id.mobilePhoneChkBx);
         mCashAddressChkBx = findViewById(R.id.cashAddressChkBx);
@@ -67,12 +74,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-
-    mBtnOk = findViewById(R.id.btnOK);
-        mBtnOk.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(MainActivity.this, "Выбор подтвержден!", Toast.LENGTH_LONG).show();
-        }
-    });
 }
