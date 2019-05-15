@@ -3,6 +3,7 @@ package com.example.proninhw2111;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -24,11 +25,12 @@ public class MainActivity extends AppCompatActivity {
         initViews();
     }
 
-    private void resetCheckBoxes(){
+    private void resetCheckBoxes() {
         mBankCardChkBx.setChecked(false);
         mMobilePhoneChkBx.setChecked(false);
         mCashAddressChkBx.setChecked(false);
     }
+
     private void initViews() {
         mInputMoney = findViewById(R.id.inputMoney);
         mInputInfo = findViewById(R.id.inputInfo);
@@ -65,7 +67,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        Toast.makeText(MainActivity.this, "Выбор сделан!", Toast.LENGTH_LONG).show();
-
     };
+
+//    if (mCashAddressChkBx.isChecked()) {
+//        textString = getString(R.string.textMessageCashAddress, summaFloat);
+//    }
+
+    public void setmBtnOk(Button mBtnOk) {
+        this.mBtnOk = mBtnOk;
+        mBtnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Выбор подтвержден!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+    }
 }
