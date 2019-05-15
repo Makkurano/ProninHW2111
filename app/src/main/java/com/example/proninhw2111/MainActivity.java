@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox mBankCardChkBx;
     private CheckBox mMobilePhoneChkBx;
     private CheckBox mCashAddressChkBx;
+    String textString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +40,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mCashAddressChkBx.isChecked()) {
-                    Toast.makeText(MainActivity.this, "Выбран наличный рассчет", Toast.LENGTH_LONG).show();
+                    textString = getString(R.string.textcache);
                 }
                 if (mMobilePhoneChkBx.isChecked()) {
-                    Toast.makeText(MainActivity.this, "Выбрана оплата телефоном", Toast.LENGTH_LONG).show();
+                    textString = getString(R.string.textmobile);
                 }
                 if (mBankCardChkBx.isChecked()) {
-                    Toast.makeText(MainActivity.this, "Выбрана оплата картой", Toast.LENGTH_LONG).show();
+                    textString = getString(R.string.textcard);
                 }
+                Toast.makeText(MainActivity.this, textString, Toast.LENGTH_LONG).show();
+
             }
         });
         mBankCardChkBx = findViewById(R.id.bankCardChkBx);

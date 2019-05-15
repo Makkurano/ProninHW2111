@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">ProninHW2111</string>
+    <string name="app_name">Домашка211</string>
+    <string name="textcache">Выбрана оплата ниличными</string>
+    <string name="textmobile">Выбрана оплата мобильным</string>
+    <string name="textcard">Выбрана оплата картой</string>
 </resources>
